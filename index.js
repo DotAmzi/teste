@@ -16,3 +16,8 @@ app.use(bodyParser.json())
 app.get("/", function (req, res) {
     res.sendfile("/public/index.html");
 });
+
+
+var server = app.listen(443, function () {
+    console.log("Example app listening at http://%s:%s", server.address().address, server.address().port)
+});
