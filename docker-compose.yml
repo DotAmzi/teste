@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+
+  app:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    container_name: airControlBackEnd
+    command: yarn start
+    expose:
+      - 3000
+    ports:
+      - 3000:3000
+    networks:
+      - air-bridge
+
+networks:
+  air-bridge:
+    driver: bridge
